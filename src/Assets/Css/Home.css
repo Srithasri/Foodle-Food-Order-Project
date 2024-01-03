@@ -5,6 +5,7 @@
   overflow-x: hidden;
   
 }
+
 .Home-food{
    height: 88vh;
   background: linear-gradient(
@@ -140,6 +141,7 @@ li .new{
   }
   .nav
   {
+    
     align-items: center;
    
   }

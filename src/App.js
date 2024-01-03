@@ -21,6 +21,7 @@ function App() {
      <Route path='/Home' element={<Home/>}/>
      <Route path='/Register' element={<Register/>}/>
      <Route path='/Sidebar' element={<Sidebar/>}/>
+     <Route path='/' element={<Home/>}/>
 
      </Routes> 
     </div>

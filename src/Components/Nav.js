@@ -7,7 +7,7 @@ function Nav()
       <div className="nav">
       <div className="nav1">
       <ul className='uli'>
-        <li className="new"><a href='#'>FooDle</a></li>
+        <li className="new"><span>Foodle</span></li>
 
 
         

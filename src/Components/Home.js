@@ -41,7 +41,7 @@ const Home = () => {
 <div class="grid-5 up">
   <div class="card card-elevation">
     <div class="">
-      <img class="img-car" src="https://cf0316.s3.amazonaws.com/cookificom/menu/22/95dbaf.jpg"/>
+      <img class="img-car" src="https://cf0316.s3.amazonaws.com/cookificom/menu/22/95dbaf.jpg" alt="image"/>
       <h1>Continental</h1>
       <button class="color-pink btncc">Explore</button>
     </div>
@@ -50,7 +50,7 @@ const Home = () => {
 <div class="grid-5 up">
   <div class="card card-elevation">
     <div class="">
-      <img class="img-car" src="https://img.freepik.com/premium-photo/asian-noodles-with-prawns-vegetables-served-bowl-dark-background_1220-5659.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702944000&semt=ais"/>
+      <img class="img-car" src="https://img.freepik.com/premium-photo/asian-noodles-with-prawns-vegetables-served-bowl-dark-background_1220-5659.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702944000&semt=ais" alt="image"/>
       <h1>Chinese cuisine</h1>
       <button class="color-pink btncc">Explore</button>
     </div>
