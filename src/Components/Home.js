@@ -41,7 +41,7 @@ const Home = () => {
 <div class="grid-5 up">
   <div class="card card-elevation">
     <div class="">
-      <img class="img-car" src="https://cf0316.s3.amazonaws.com/cookificom/menu/22/95dbaf.jpg" alt="image"/>
+      <img class="img-car" src="https://cf0316.s3.amazonaws.com/cookificom/menu/22/95dbaf.jpg" alt=""/>
       <h1>Continental</h1>
       <button class="color-pink btncc">Explore</button>
     </div>

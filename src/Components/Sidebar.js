@@ -1,4 +1,5 @@
 // import React,{useState} from 'react'
+import { Link } from 'react-router-dom'
 // import { NavLink } from 'react-router-dom'
 import '../Assets/Css/style.css'
 import {useNavigate} from 'react-router-dom'
@@ -18,41 +19,41 @@ const Sidebar=({Children})=>
  
   <div id="sidebar">
     <header>
-      <a href="#">Dashboard</a>
+      <Link to="#">Dashboard</Link>
     </header>
     <ul class="nav">
       
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-link"></i> Profile
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-widgets"></i>Carts
-        </a>
+        </Link>
       </li>
       
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-info-outline"></i>Orders
-        </a>
+        </Link>
       </li>
      
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-comment-more"></i> WishList
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-comment-more"></i> Payment
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#">
+        <Link to="#">
           <i class="zmdi zmdi-view-dashboard"></i> Settings
-        </a>
+        </Link>
       </li>
     </ul>
     <div>
