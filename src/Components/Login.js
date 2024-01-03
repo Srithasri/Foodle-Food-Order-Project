@@ -13,7 +13,7 @@ function Login() {
 
     // Replace this with your actual login logic
     // For demonstration purposes, let's assume a simple check
-    const isLoginSuccessful = username === 'Sritha' && password === '12345';
+    const isLoginSuccessful = username === 'Sritha' && password === '1234';
 
     if (isLoginSuccessful) {
       
