@@ -6,9 +6,14 @@
 #Sign Up Page
 ![image](https://github.com/Srithasri/Foodle-Food-Order-Project/assets/125287386/152e4d05-6bf8-4cb7-bad0-230d9e254ed3)
 
-#Login Page
+#Login Page 
+Username-Sritha
+password-12345
+
 ![image](https://github.com/Srithasri/Foodle-Food-Order-Project/assets/125287386/c02eabfb-9407-4ce8-9d6e-6ae7f21cb62d)
 ![image](https://github.com/Srithasri/Foodle-Food-Order-Project/assets/125287386/2385b498-2c56-4d2c-a808-f328f04f33fe)
+
+
 
 #Dashboard
 ![image](https://github.com/Srithasri/Foodle-Food-Order-Project/assets/125287386/bdd3bc40-de19-49d1-a04c-a53614f0bd56)
