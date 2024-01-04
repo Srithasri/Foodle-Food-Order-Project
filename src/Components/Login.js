@@ -3,19 +3,48 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import {useRef,useState} from 'react'
 
 function Login() {
+  const username= useRef(null);
+  const password = useRef(null);
+  const [errors,setErrors] =useState({
+    username:'',
+    password:''
+  })
   const navigate=useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
-    const username = event.target.username.value;
-    const password = event.target.password.value;
+    event.preventDefault(); 
+    
+    
+    
+    // const username = event.target.username.value;
+    // const password = event.target.password.value;
 
     // Replace this with your actual login logic
     // For demonstration purposes, let's assume a simple check
-    const isLoginSuccessful = username === 'Sritha' && password === '1234';
+    const data = {
+      username:username.current.value,
+      password:password.current.value
+    }
+    if(data.username.length==0)
+    {
+       setErrors({...errors,username:'username is empty !'});
+    }
+    else if(data.username.length <6)
+    {
+        setErrors({...errors,username: 'min 6 chars'});
+    }
+    // else if(!emailRegex.test(data.emal))
+    // {
+    //     setErrors({...errors,email:'invalid username!'});
+    // }
+    else
+    {
+        setErrors({...errors,username: ''}); 
+    if(data.username === 'Sritha' )
 
-    if (isLoginSuccessful) {
+  {
       
       
       toast.success('Logged in', {
@@ -44,7 +73,10 @@ function Login() {
         progress: undefined,
         theme: "colored",
         });
-    }
+    }}
+    username.current.value=''
+    password.current.value=''
+
   };
 
   return (
@@ -52,8 +84,16 @@ function Login() {
     <div className="body1">
       <form className="container" onSubmit={handleSubmit}>
         <h2 className="hh">Login</h2>
-        <input type="text" name="username" id="username" placeholder="Name" className="auth" required/>
-        <input type="password" name="password" id="pwd" placeholder="Password" className="auth" required/>
+        <input type="text" name="username" id="username" placeholder="Name" className="auth" ref={username}/>
+        {
+            errors.username===''?'':
+            <span className='span-ee'>{errors.username}</span>
+        }
+        <input type="password" name="password" id="pwd" placeholder="Password" className="auth" ref={password}/>
+        {
+            errors.password===''?'':
+            <span className='span-ee'>{errors.password}</span>
+        }
         <input type="submit" value="Login" className="btn" />
        
       </form>
@@ -74,4 +114,4 @@ theme="colored"
   );
 }
 
-export default Login;
+export default Login
