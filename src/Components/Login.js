@@ -42,7 +42,10 @@ function Login() {
     else
     {
         setErrors({...errors,username: ''}); 
-    if(data.username === 'Sritha' )
+        let y = parseInt(document.getElementById('Password').value, 10)
+                    let x=12345;
+
+    if(data.username === "Sritha" && y===x )
 
   {
       
