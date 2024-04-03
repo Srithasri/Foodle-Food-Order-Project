@@ -1,120 +1,124 @@
-import {useNavigate} from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
 
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import axios from 'axios';
+
+// function Login() {
+//   const [formData, setFormData] = useState({ username: '', password: '' });
+//   const [errors, setErrors] = useState({});
+
+//   const navigate = useNavigate();
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//     setErrors({ ...errors, [e.target.name]: '' });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const response = await axios.post('http://localhost:8080/api/v1/user/login', formData);
+//       if (response.data.success) {
+//         toast.success('Logged in successfully!', { position: "bottom-right" });
+//         navigate('/Sidebar');
+//       } else {
+//         setErrors({ ...errors, username: 'Invalid credentials' });
+//         toast.error('Login failed. Please check your credentials.', { position: "bottom-right" });
+//       }
+//     } catch (error) {
+//       console.error('Error:', error);
+//       toast.error('Something went wrong!', { position: "bottom-right" });
+//     }
+//   };
+
+//   return (
+//     <>
+//       <div className="body1">
+//         <form className="container" onSubmit={handleSubmit}>
+//           <h2 className="hh">Login</h2>
+//           <input type="text" name="username" placeholder="Name" className="auth" value={formData.username} onChange={handleChange} />
+//           {errors.username && <span className='span-ee'>{errors.username}</span>}
+//           <input type="password" name="password" placeholder="Password" className="auth" value={formData.password} onChange={handleChange} />
+//           <input type="submit" value="Login" className="btn" />
+//         </form>
+//       </div>
+//       <ToastContainer
+//         position="bottom-right"
+//         autoClose={5000}
+//         hideProgressBar={false}
+//         newestOnTop={false}
+//         closeOnClick
+//         rtl={false}
+//         pauseOnFocusLoss
+//         draggable
+//         pauseOnHover
+//         theme="colored"
+//       />
+//     </>
+//   );
+// }
+
+// export default Login;
+
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {useRef,useState} from 'react'
+const Login = () => {
+    const navigate = useNavigate();
 
-function Login() {
-  const username= useRef(null);
-  const password = useRef(null);
-  const [errors,setErrors] =useState({
-    username:'',
-    password:''
-  })
-  const navigate=useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    
-    
-    
-    // const username = event.target.username.value;
-    // const password = event.target.password.value;
+    const [formData, setFormData] = useState({ email: '', password: '' });
 
-    // Replace this with your actual login logic
-    // For demonstration purposes, let's assume a simple check
-    const data = {
-      username:username.current.value,
-      password:password.current.value
-    }
-    if(data.username.length==0)
-    {
-       setErrors({...errors,username:'username is empty !'});
-    }
-    else if(data.username.length <6)
-    {
-        setErrors({...errors,username: 'min 6 chars'});
-    }
-    // else if(!emailRegex.test(data.emal))
-    // {
-    //     setErrors({...errors,email:'invalid username!'});
-    // }
-    else
-    {
-        setErrors({...errors,username: ''}); 
-        let y = parseInt(document.getElementById('Password').value, 10)
-                    let x=12345;
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-    if(data.username === "Sritha" && y===x )
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  {
-      
-      
-      toast.success('Logged in', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      setTimeout(()=>{
-
-      navigate('/Sidebar');
-      },2000);
-      
-    } else {
-      toast.error('Login Failed.Try Again!', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        });
-    }}
-    username.current.value=''
-    password.current.value=''
-
-  };
-
-  return (
-    <>
-    <div className="body1">
-      <form className="container" onSubmit={handleSubmit}>
-        <h2 className="hh">Login</h2>
-        <input type="text" name="username" id="username" placeholder="Name" className="auth" ref={username}/>
-        {
-            errors.username===''?'':
-            <span className='span-ee'>{errors.username}</span>
+        try {
+            const response = await axios.post('http://localhost:8080/api/v1/user/save', formData);
+            if (response.data.success) {
+                toast.success('Logged in successfully!', { position: "bottom-right" });
+                navigate('/Sidebar');
+            } else {
+                toast.error('Login failed. Please check your credentials.', { position: "bottom-right" });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            toast.error('Something went wrong!', { position: "bottom-right" });
         }
-        <input type="password" name="password" id="pwd" placeholder="Password" className="auth" ref={password}/>
-        {
-            errors.password===''?'':
-            <span className='span-ee'>{errors.password}</span>
-        }
-        <input type="submit" value="Login" className="btn" />
-       
-      </form>
-    </div>
-    <ToastContainer
-position="bottom-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="colored"
-/>
-    </>
-  );
-}
+    };
 
-export default Login
+    return (
+        <>
+            <div className="body1">
+                <form className="container" onSubmit={handleSubmit}>
+                    <h2 className="hh">Login</h2>
+                    <input type="email" name="email" placeholder="Email" className="auth" value={formData.email} onChange={handleChange} />
+                    <input type="password" name="password" placeholder="Password" className="auth" value={formData.password} onChange={handleChange} />
+                    <input type="submit" value="Login" className="btn" />
+                </form>
+            </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
+        </>
+    );
+};
+
+export default Login;
